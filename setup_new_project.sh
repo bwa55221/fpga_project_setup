@@ -24,14 +24,14 @@ FILE=$WORKDIR/$1/$2/scripts/parameters.sh
 /bin/cat << EOF >$FILE
 #!/bin/bash
 echo "Sourcing params.sh to environment"
-rootdir=$WORKDIR/$1
-echo -e "rootdir:\t $rootdir"
-quartus_dir="/home/brandon/intelFPGA_pro/24.1/quartus/bin"
-echo -e "quartus_dir:\t $quartus_dir"
-qsys_dir="/home/brandon/intelFPGA_pro/24.1/qsys/bin"
-echo -e "qsys_dir:\t $qsys_dir"
-syscon_dir="/home/brandon/intelFPGA_pro/24.1/syscon/bin"
-echo -e "system console binary path:\t $syscon_dir"
+ROOTDIR=$WORKDIR/$1
+echo -e "ROOTDIR:\t \$ROOTDIR"
+QUARTUS_DIR="/home/brandon/intelFPGA_pro/24.1/quartus/bin"
+echo -e "QUARTUS_DIR:\t \$QUARTUS_DIR"
+QSYS_DIR="/home/brandon/intelFPGA_pro/24.1/qsys/bin"
+echo -e "QSYS_DIR:\t \$QSYS_DIR"
+SYSCON_DIR="/home/brandon/intelFPGA_pro/24.1/syscon/bin"
+echo -e "system console binary path:\t \$SYSCON_DIR"
 
 ############ PROJECT PARAMETERS ############
 # Quartus PROJECT name

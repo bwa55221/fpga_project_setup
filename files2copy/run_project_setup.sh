@@ -18,10 +18,10 @@ cp parameters.sh $QUARTUS_BUILD_DIR/.
 cd $QUARTUS_BUILD_DIR
 
 echo "Executing setup script: $SETUP_SCRIPT"
-$quartus_dir/quartus_sh -t $SOURCE_CODE_DIR/scripts/$SETUP_SCRIPT
+$QUARTUS_DIR/quartus_sh -t $SOURCE_CODE_DIR/scripts/$SETUP_SCRIPT
 
 # echo "Generating QSYS components..."
-# $qsys_dir/qsys-generate --synthesis=VERILOG --quartus-project=$PROJ_NAME.qpf ${SOURCE_CODE_DIR}/synthesis/pcie_sys.qsys
+# $QSYS_DIR/qsys-generate --synthesis=VERILOG --quartus-project=$PROJ_NAME.qpf ${SOURCE_CODE_DIR}/synthesis/pcie_sys.qsys
 # echo "QSYS component generation complete."
 
 echo ""
@@ -30,4 +30,4 @@ echo ""
 echo ""
 
 echo "Opening newly created Quartus Project"
-$quartus_dir/quartus $PROJ_NAME.qpf
+$QUARTUS_DIR/quartus $PROJ_NAME.qpf

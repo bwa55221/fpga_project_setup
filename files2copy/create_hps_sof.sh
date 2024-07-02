@@ -12,5 +12,5 @@ source parameters.sh
 # echo "Copying the new .sof to local directory"
 # cp ~/quartus_projects/xgspon_fpga/sw_test_proj/sw_test_proj.sof XPON_fpga.sof
 # echo "Generating the new hps.sof"
-$quartus_dir/quartus_pfg -c -o hps_path=$DTB_FILE "$SOF_DIR/$PROJ_NAME.sof" "$SOF_DIR/${PROJ_NAME}_hps.sof"
+$QUARTUS_DIR/quartus_pfg -c -o hps_path=$DTB_FILE "$SOF_DIR/$PROJ_NAME.sof" "$SOF_DIR/${PROJ_NAME}_hps.sof"
 
