@@ -4,18 +4,18 @@ readfile parameters.sh
 # note: the overwrite flag overwrites any .qsf if it exists
 project_new ${PROJ_NAME} -overwrite 
 
-set_global_assignment -name TOP_LEVEL_ENTITY ${PROJ_NAME}
+set_global_assignment -name TOP_LEVEL_ENTITY system_top_level
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
-set_global_assignment -name VHDL_INPUT_VERSION VHDL_2008
-set_global_assignment -name VERILOG_INPUT_VERSION SYSTEMVERILOG_2012
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 100
-set_global_assignment -name DEVICE AGFB014R24B2E2V
-set_global_assignment -name FAMILY "Agilex 7"
+set_global_assignment -name VHDL_INPUT_VERSION VHDL_2008
+set_global_assignment -name VERILOG_INPUT_VERSION SYSTEMVERILOG_2012
 set_global_assignment -name NUM_PARALLEL_PROCESSORS ALL
 set_global_assignment -name SEED 1
 set_global_assignment -name FLOW_ENABLE_RTL_VIEWER ON
 set_global_assignment -name HDL_MESSAGE_LEVEL LEVEL3
+set_global_assignment -name REMOVE_DUPLICATE_REGISTERS OFF
+set_global_assignment -name SYNTH_PROTECT_SDC_CONSTRAINT ON
 
 
 ####################################################################################
@@ -23,10 +23,10 @@ set_global_assignment -name HDL_MESSAGE_LEVEL LEVEL3
 ####################################################################################
 
 #set_global_assignment -name GENERATE_COMPRESSED_SOF ON
-#set_global_assignment -name SDC_FILE "${SOURCE_CODE_DIR}/timing.sdc"
+set_global_assignment -name SDC_FILE "${SOURCE_CODE_DIR}/${PROJ_NAME}.sdc"
 #set_global_assignment -name VHDL_FILE "${SOURCE_CODE_DIR}/hdl/pcie_sys_top_level.vhd"
 #set_global_assignment -name VERILOG_FILE "${DMA_MODULE_DIR}/pcie_dma_mod.v"
-#set_global_assignment -name SYSTEMVERILOG_FILE "${SOURCE_CODE_DIR}/hdl/system_top_level.sv"
+set_global_assignment -name SYSTEMVERILOG_FILE "${SOURCE_CODE_DIR}/hdl/system_top_level.sv"
 #set_global_assignment -name QSYS_FILE "${SOURCE_CODE_DIR}/synthesis/pcie_sys.qsys"
 #set_global_assignment -name IP_FILE "${SOURCE_CODE_DIR}/synthesis/ip/rtk_clock_bridge.ip"
 
